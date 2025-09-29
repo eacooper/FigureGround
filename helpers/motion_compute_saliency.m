@@ -14,7 +14,7 @@ all_set_ims = cat(4, UCBim.all_set_ims, ZOOim.all_set_ims); clear UCBim; clear Z
 for x = 1:size(all_set_ims,4)
 
     % load image and gamma correct (secnd frame in dim 3 is target image
-    im = (all_set_ims(:, :, 2, x)*2^16).^(1/gamma_val);
+    im = (double(all_set_ims(:, :, 2, x))./255).^(1/gamma_val);
 
     % compute the default bottom-up SUN saliency
     [Saliency_Map, Feature_Maps, ICA_Maps, ~] = Run_SUN(im, []);
