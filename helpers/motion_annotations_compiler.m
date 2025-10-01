@@ -3,6 +3,7 @@
 % paths
 saveDir = fullfile(resultsPath,'motion_perVideo_info');
 
+
 % type of frames
 frame_types = {"ep1a", ...
     "ep1b", ...
@@ -91,6 +92,7 @@ for v = 1:length(vidset_IDs)
     all_set_ori(all_set_labels == 1) = NaN;
 
     % Save
+    fprintf("\nSaving annotations file for %s", vidset_ID);
     saveName = fullfile(saveDir, strcat(vidset_ID,'_MagOri_allTOG_skygone.mat'));
     save(saveName, '-v7.3',   'all_set_mag', 'all_set_ori');
 

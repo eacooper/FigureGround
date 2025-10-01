@@ -14,6 +14,9 @@ dataPath = '/Users/emily/Desktop/FGRepo';
 
 % path where you'd like to store interim analysis files and results
 resultsPath = fullfile(codePath,'results');
+if ~isdir(resultsPath)
+    mkdir(resultsPath); % create results directory if it does not exist
+end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % set analysis parameters
@@ -22,6 +25,8 @@ motion_set_analysis_params;
 %% Step 2: compute and clean up optic flow
 % Note: you can comment this section out and just run:
 % motion_load_files if you just want to do Step 3
+fprintf("\n Note: you can comment out the Step 2 section and run motion_load_files.m instead if you just want to do Step 3")
+fprintf("\n If not running step 2, relocate the motion_perVideo_info folder from the InterimFilesPt2.zip to the results folder")
 
 % compute high quality optic flow maps and store them for analysis
 % Note: this step may take a few hours

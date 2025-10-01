@@ -10,7 +10,7 @@ codePath = '.';
 addpath(genpath(fullfile(codePath,'helpers')));
 
 % path to location of DataSets and Annotations folders downloaded from Zenodo Repository
-dataPath = '/Users/emily/Desktop/FGRepo';
+dataPath = 'C:\Users\pvt-cladm\Downloads\FG_Zenodo';%'/Users/emily/Desktop/FGRepo';
 
 % path where you'd like to store interim analysis files and results
 resultsPath = fullfile(codePath,'results');
@@ -23,7 +23,7 @@ distance_set_analysis_params;
 % Note: you can comment this section out and just run:
 % distance_load_files if you just want to do Step 3
 fprintf("\n Note: you can comment out the Step 2 section and run distance_load_files.m instead if you just want to do Step 3")
-fprintf("\n If not running step 2, relocate the distance_perImage_info folder from the InterimFilesPt1.zip to the results folder")
+fprintf("\n If not running step 2, relocate the motion_perVideo_info folder from the InterimFilesPt1.zip to the results folder")
 
 % organize distance maps and images
 distance_preprocess;
@@ -31,7 +31,7 @@ distance_preprocess;
 % compute saliency maps for each image
 distance_compute_saliency;
 
-
+% 
 % %% preprocess and plot all the distance map data and annotations
 % % can also just load preprocessed data
 % if(0);      distance_preprocess_and_plot;
